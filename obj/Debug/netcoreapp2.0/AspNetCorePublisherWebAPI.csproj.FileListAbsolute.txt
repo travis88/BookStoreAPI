@@ -1,0 +1,10 @@
+/home/ss/Documents/Projects/asp/AspNetCorePublisherWebAPI/bin/Debug/netcoreapp2.0/AspNetCorePublisherWebAPI.deps.json
+/home/ss/Documents/Projects/asp/AspNetCorePublisherWebAPI/bin/Debug/netcoreapp2.0/AspNetCorePublisherWebAPI.runtimeconfig.json
+/home/ss/Documents/Projects/asp/AspNetCorePublisherWebAPI/bin/Debug/netcoreapp2.0/AspNetCorePublisherWebAPI.runtimeconfig.dev.json
+/home/ss/Documents/Projects/asp/AspNetCorePublisherWebAPI/bin/Debug/netcoreapp2.0/AspNetCorePublisherWebAPI.dll
+/home/ss/Documents/Projects/asp/AspNetCorePublisherWebAPI/bin/Debug/netcoreapp2.0/AspNetCorePublisherWebAPI.pdb
+/home/ss/Documents/Projects/asp/AspNetCorePublisherWebAPI/obj/Debug/netcoreapp2.0/AspNetCorePublisherWebAPI.csproj.CoreCompileInputs.cache
+/home/ss/Documents/Projects/asp/AspNetCorePublisherWebAPI/obj/Debug/netcoreapp2.0/AspNetCorePublisherWebAPI.AssemblyInfoInputs.cache
+/home/ss/Documents/Projects/asp/AspNetCorePublisherWebAPI/obj/Debug/netcoreapp2.0/AspNetCorePublisherWebAPI.AssemblyInfo.cs
+/home/ss/Documents/Projects/asp/AspNetCorePublisherWebAPI/obj/Debug/netcoreapp2.0/AspNetCorePublisherWebAPI.dll
+/home/ss/Documents/Projects/asp/AspNetCorePublisherWebAPI/obj/Debug/netcoreapp2.0/AspNetCorePublisherWebAPI.pdb
