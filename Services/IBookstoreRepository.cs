@@ -55,6 +55,35 @@ namespace AspNetCorePublisherWebAPI.Services
         void DeleteBook(BookDTO book);
 
         /// <summary>
+        /// Список книг по издателю
+        /// </summary>
+        /// <param name="publisherId"></param>
+        /// <returns></returns>
+        IEnumerable<BookDTO> GetBooks(int publisherId);
+
+        /// <summary>
+        /// Книга по издателю и идентификатору
+        /// </summary>
+        /// <param name="publisherId"></param>
+        /// <param name="bookId"></param>
+        /// <returns></returns>
+        BookDTO GetBook(int publisherId, int bookId);
+
+        /// <summary>
+        /// Добавление новой книги
+        /// </summary>
+        /// <param name="book"></param>
+        void AddBook(BookDTO book);
+
+        /// <summary>
+        /// Обновление книги
+        /// </summary>
+        /// <param name="publisherId"></param>
+        /// <param name="bookId"></param>
+        /// <param name="book"></param>
+        void UpdateBook(int publisherId, int bookId, BookUpdateDTO book);
+
+        /// <summary>
         /// Сохранение изменений
         /// </summary>
         /// <returns></returns>

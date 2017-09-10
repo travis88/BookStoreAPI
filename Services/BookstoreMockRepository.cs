@@ -96,6 +96,54 @@ namespace AspNetCorePublisherWebAPI.Services
         }
 
         /// <summary>
+        /// Список книг по издателю
+        /// </summary>
+        /// <param name="publisherId"></param>
+        /// <returns></returns>
+        public IEnumerable<BookDTO> GetBooks(int publisherId) 
+        {
+            return MockData.Current.Books
+                .Where(b => b.PublisherId.Equals(publisherId));
+        }
+
+        /// <summary>
+        /// Книга по издателю и идентификатору
+        /// </summary>
+        /// <param name="publisherId"></param>
+        /// <param name="bookId"></param>
+        /// <returns></returns>
+        public BookDTO GetBook(int publisherId, int bookId)
+        {
+            return MockData.Current.Books
+                .FirstOrDefault(b => b.PublisherId.Equals(publisherId) 
+                && b.Id.Equals(bookId));
+        }
+        
+        /// <summary>
+        /// Добавление новой книги
+        /// </summary>
+        /// <param name="book"></param>
+        public void AddBook(BookDTO book)
+        {
+            var bookId = MockData.Current.Books.Max(m => m.Id) + 1;
+            book.Id = bookId;
+
+            MockData.Current.Books.Add(book);
+        }
+
+        /// <summary>
+        /// Обновление книги
+        /// </summary>
+        /// <param name="publisherId"></param>
+        /// <param name="bookId"></param>
+        /// <param name="book"></param>
+        public void UpdateBook(int publisherId, int bookId, BookUpdateDTO book)
+        {
+            var bookToUpdate = GetBook(publisherId, bookId);
+            bookToUpdate.Title = book.Title;
+        }
+
+        /// <summary>
         /// Сохраняем изменения
         /// </summary>
         /// <returns></returns>
