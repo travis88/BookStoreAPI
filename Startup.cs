@@ -8,7 +8,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
 using AspNetCorePublisherWebAPI.Services;
+using AspNetCorePublisherWebAPI.Entities;
 
 namespace AspNetCorePublisherWebAPI
 {
@@ -30,8 +32,20 @@ namespace AspNetCorePublisherWebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            var conn = Configuration["connectionStrings:sqlConnection"];
+            services.AddDbContext<SqlDbContext>(options => options.UseNpgsql(conn));
+
+            AutoMapper.Mapper.Initialize(config =>
+            {
+                config.CreateMap<Entities.Book, Models.BookDTO>();
+                config.CreateMap<Models.BookDTO, Entities.Book>();
+                config.CreateMap<Entities.Publisher, Models.PublisherDTO>();
+                config.CreateMap<Models.PublisherDTO, Entities.Publisher>();
+            });
+
             services.AddScoped(typeof(IBookstoreRepository),
-                typeof(BookstoreMockRepository));
+                typeof(BookstoreSqlRepository));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
