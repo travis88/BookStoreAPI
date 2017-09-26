@@ -35,6 +35,7 @@ namespace AspNetCorePublisherWebAPI
 
             var conn = Configuration["connectionStrings:sqlConnection"];
             services.AddDbContext<SqlDbContext>(options => options.UseNpgsql(conn));
+            services.AddScoped(typeof(IGenericEFRepository), typeof(GenericEFRepository));
 
             AutoMapper.Mapper.Initialize(config =>
             {
