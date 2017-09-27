@@ -11,5 +11,9 @@ namespace AspNetCorePublisherWebAPI.Services
         bool Save();
 
         void Add<TEntity>(TEntity item) where TEntity : class;
+
+        bool Exists<TEntity>(int id) where TEntity : class;
+
+        void Delete<TEntity>(TEntity item) where TEntity : class;
     }
 }
